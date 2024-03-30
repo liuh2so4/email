@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+        }
+
+        .search-container input[type=text] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .search-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .email-button {
+            display: block;
+            width: 100%;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .email-details {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mailbox</h1>
+        <form action="/search" method="GET" class="search-container">
+            <input type="text" name="keyword" placeholder="Search with keywords">
+            <button type="submit">Search</button>
+        </form>
+        <hr>
+        <h2>Emails:</h2>
+        <ul>
+            {% for email in emails %}
+            <li>
+                <button class="email-button" onclick="toggleDetails(this)">
+                    <span class="subject">{{ email.subject }}</span><br>
+                    <span class="date">{{ email.date }}</span>
+                </button>
+                <div class="email-details">
+                    <strong>From:</strong> {{ email.from_address }}<br>
+                    <strong>Subject:</strong> {{ email.subject }}<br>
+                    <strong>Date:</strong> {{ email.date }}<br>
+                    <p>{{ email.plaintext }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script>
+        function toggleDetails(button) {
+            var details = button.nextElementSibling;
+            if (details.style.display === "none") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

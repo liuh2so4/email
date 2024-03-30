@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email System</title>
+  <style>
+    /* Reset styles */
+    body, html {
+      background-color: rgb(58, 0, 106);
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    /* Main container styles */
+    .container {
+      max-width: 600px;
+      margin: 10px auto;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    
+    /* Header styles */
+    .header {
+      background-color: #de90ff;
+      padding: 10px;
+    }
+    
+    /* Email list styles */
+    .email-list {
+      background-color: #f4f4f4;
+      margin-top: 10px;
+    }
+    
+    /* Email item styles */
+    .email-item {
+      background-color: #f4f4f4;
+      padding: 10px;
+    }
+    
+    /* Email item hover effect */
+    .email-item:hover {
+      background-color: #e4e4e4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Email System</h2>
+    </div>
+    <div class="email-list">
+      <div class="email-item">
+        <h3>Subject 1</h3>
+        <p>Sender: sender@example.com</p>
+        <p>Date: March 30, 2024</p>
+      </div>
+      <hr width="100%" size="10px" color="#3a006a">
+      <div class="email-item">
+        <form action="/sent" method='POST'>
+            <p>
+            <label for="receiver">Receiver Account:</label>
+            <textarea id="receiver" name="receiver" rows="1" cols="56" required></textarea>
+            </p>
+            <p>
+            <label for="Purpose">Purpose:</label>
+            <textarea id="purpose" name="purpose" rows="1" cols="65" required></textarea>
+            </p>
+            <p>
+            <label for="Keyword">Keyword:</label>
+            <textarea id="keyword" name="keyword" rows="1" cols="65" required></textarea>
+            </p>
+            <p>
+            <label for="text">Message:</label>
+            <textarea id="text" name="text" rows="4" cols="75" required></textarea>
+            </p>
+            <button>Send email</button>
+        </form>
+      </div>
+      <!-- More email items can be added here -->
+    </div>
+  </div>
+</body>
+</html>

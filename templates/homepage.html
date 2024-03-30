@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(98, 177, 255);
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 80%; /* Adjust as needed */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h2 {
+            color: navy;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section" id="sentMail">
+            <h2>Sent Mail</h2>
+            <button onclick="location.href='/sentMail'">Go to Sent Mail Page</button>
+        </div>
+        <div class="section" id="mailbox">
+            <h2>Mailbox</h2>
+            <button onclick="location.href='/mailbox'">Go to Mailbox</button>
+        </div>
+        <div class="section" id="homepage">
+            <h2>Home Page</h2>
+            <button onclick="location.href='/homepage'">Go to Home Page</button>
+        </div>
+    </div>
+</body>
+</html>
